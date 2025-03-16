@@ -547,7 +547,7 @@ address {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url("../images/hero-bg@2x.jpg");
+      url("../images/hero-bg.jpg");
   }
 
   @media screen and (min-width: 768px) {
@@ -556,7 +556,7 @@ address {
           rgba(46, 47, 66, 0.7),
           rgba(46, 47, 66, 0.7)
         ),
-        url("../images/hero-bg@2x.jpg");
+        url("../images/hero-bg.jpg");
     }
   }
 
@@ -566,7 +566,7 @@ address {
           rgba(46, 47, 66, 0.7),
           rgba(46, 47, 66, 0.7)
         ),
-        url("../images/hero-bg@2x.jpg");
+        url("../images/hero-bg.jpg");
     }
   }
 }
@@ -1640,6 +1640,7 @@ header .container {
 }
 
 /* High-resolution (Retina) display support */
+/* Поддержка Retina-дисплеев (x2) */
 @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
   /* Mobile hero background */
   .hero {
@@ -1647,7 +1648,7 @@ header .container {
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
-      url("../images/hero-bg-mobile@2x.jpg");
+      url("../images/image_x2/hero-bg-mobile@2x.jpg");
   }
 
   /* Tablet hero background */
@@ -1657,7 +1658,7 @@ header .container {
           rgba(46, 47, 66, 0.7),
           rgba(46, 47, 66, 0.7)
         ),
-        url("../images/hero-bg-tablet@2x.jpg");
+        url("../images/image_x2/hero-bg-tablet@2x.jpg");
     }
   }
 
@@ -1668,7 +1669,19 @@ header .container {
           rgba(46, 47, 66, 0.7),
           rgba(46, 47, 66, 0.7)
         ),
-        url("../images/hero-bg@2x.jpg");
+        url("../images/image_x2/hero-bg@2x.jpg");
     }
   }
+}
+
+/* Базовое изображение (если Retina-версии не загрузятся) */
+.hero {
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url("../images/hero-bg.jpg"); /* Обычная версия */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
